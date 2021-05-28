@@ -1,0 +1,286 @@
+<div class="" id="small-nav">
+    <p class="text-center">
+        <a class='' href='#'>
+            <img id="brand-img-small" class="mem-img-small" src="../../../public/image/logo.png" alt="web-logo">
+        </a>
+    </p>
+    <div class="top-nav-small">
+        <i class="fas fa-bars text-white fa-2x" onclick="moveHorizontal()"></i>
+        <input type='text' placeholder="Search" id="search-top-small">
+        <span class="left-shift" id="search-icon-small">
+            <i class="fas fa-search fa-lg"></i>
+        </span>
+
+        <p class="chinh-p">
+            <a class='' href='#'>
+                <i class="fas fa-cart-plus fa-2x text-white"></i>
+            </a>
+        </p>
+        <p class="chinh-p">
+            <a class='' href='#'>
+                <i class="far fa-user fa-2x text-white"></i>
+            </a>
+        </p>
+    </div>
+
+    <div id="small-mover-father">
+
+        <div id='small-mover' class="small-mover-effect bg-white">
+
+            <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/default.svg">
+            <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/english.svg">
+            <p>DANH MỤC SẢN PHẨM
+                <i class="fas fa-times fa-lg" onclick="cancel()"></i>
+            </p>
+            <p class="">
+                <a href='#'>
+                    SÁCH TRONG NƯỚC
+                </a>
+                <i id='plus-1' class="fas fa-plus" onclick='expend1(this.className)'></i>
+            <div id="xem-them-1-small" class="text-capitalize" style="font-size: 12px; display: none;">
+                <div id="van-hoc">
+                    <p class="font-weight-bold">VĂN HỌC</p>
+                    <hr>
+                    <p>Tiểu thuyết</p>
+                    <hr>
+                    <p>Truyện ngắn - Tản văn</p>
+                    <hr>
+                    <p>light novel</p>
+                    <hr>
+                    <p>ngôn tình</p>
+                    <hr>
+                    <p class="font-italic text-warning">Xem thêm...</p>
+                </div>
+                <hr>
+                <div id="tieu-su">
+                    <p class="font-weight-bold">TIỂU SỬ - HỒI KÝ</p>
+                    <hr>
+                    <p>Tiểu thuyết</p>
+                    <hr>
+                    <p>Truyện ngắn - Tản văn</p>
+                    <hr>
+                    <p>light novel</p>
+                    <hr>
+                    <p>ngôn tình</p>
+                    <hr>
+                    <p class="font-italic text-warning">Xem thêm...</p>
+                </div>
+                <hr>
+                <div id="kinh-te">
+                    <p class="font-weight-bold">KINH TẾ</p>
+                    <hr>
+                    <p>Tiểu thuyết</p>
+                    <hr>
+                    <p>Truyện ngắn - Tản văn</p>
+                    <hr>
+                    <p>light novel</p>
+                    <hr>
+                    <p>ngôn tình</p>
+                    <hr>
+                    <p class="font-italic text-warning">Xem thêm...</p>
+                </div>
+                <hr>
+            </div>
+            </p>
+
+            <p class="">
+                <a href="#">
+                    FOREIGN BOOKS
+                </a>
+                <i class="fas fa-plus" onclick='expend2()'></i>
+            </p>
+
+            <p class="">
+                <a href='#'>
+                    VPP - ĐỒ DÙNG HỌC SINH
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    ĐỒ CHƠI
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    LÀM ĐẸP - SỨC KHỎE
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    SẢN PHẨM THƯƠNG HIỆU
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    SẢN PHẨM THƯƠNG HIỆU
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    SẢN PHẨM THƯƠNG HIỆU
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    SẢN PHẨM THƯƠNG HIỆU
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    VPP - ĐỒ DÙNG HỌC SINH
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    ĐỒ CHƠI
+                </a>
+            </p>
+            <p class="">
+                <a href='#'>
+                    LÀM ĐẸP - SỨC KHỎE
+                </a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="bg-white" id="big-nav">
+    <div class="header-nav bg-white container-custom">
+        <a class="brand-img" href="/home">
+            <img id="brand-img" class="mem-img"
+                src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fahasa-logo.png" alt="web-logo">
+        </a>
+
+        <form action="/search/result" id="search-top">
+            <input type="text" name="q" placeholder="Search" class="search-form">
+            <span class="left-shift" id="search-icon">
+                <button type="submit">
+                    <i class="fas fa-search fa-lg text-warning"></i>
+                </button>
+            </span>
+
+        </form>
+
+
+        <div class="" id="nav-icon">
+            <span class="li-nav">
+
+                <i class="fas fa-bell fa-lg"></i>
+                <p class="chinh-p">THÔNG BÁO</p>
+
+                <div id="notification" class="fade-view bg-white">
+                    <i class="fas fa-user-friends fa-5x" style="color: blue;position: absolute; ;left:33%"></i>
+                    <p style="text-align: center;color: #333333;margin-top: 75px;">Vui lòng đăng nhặp để xem
+                        thông báo</p>
+                    <p class="xem-them-1">Đăng nhập</p>
+                    <p class="xem-them-1">Đăng Ký</p>
+                </div>
+            </span>
+
+            <span class="li-nav">
+                <i class="fas fa-cart-plus fa-lg"></i>
+                <p class="chinh-p">GIỎ HÀNG</p>
+                <div id="cart" class="fade-view bg-white">
+                    <p style="text-align: center;color: #333333;">Bạn chưa có sản phẩm trong giỏ hàng</p>
+                    <p style="text-align: center;color: #333333;">Số tiền thanh toán <span>0</span> đ</p>
+                </div>
+            </span>
+
+            <span class="li-nav" id="log-in">
+                <i class="fas fa-sign-in-alt fa-lg"></i>
+                <p class="chinh-p">ĐĂNG NHẬP</p>
+            </span>
+            <div class="hien-thi" id="login-area">
+                <div class="dep bg-white">
+                    <div class="" style="margin-bottom: 20px;">
+                        <div class="list-group list-group-horizontal" id="list-login" role="tablist">
+                            <a class="list-group-item list-group-item-action active login-animation" id="login-login"
+                                data-toggle="list" href="#login-form" role="tab" aria-controls="home">Đăng
+                                nhập</a>
+                            <a class="list-group-item list-group-item-action login-animation" id="signin-signin"
+                                data-toggle="list" href="#signin-form" role="tab" aria-controls="profile">Đăng
+                                kí</a>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active " id="login-form" role="tabpanel"
+                                aria-labelledby="list-home-list">
+                                <form action="/login/email" method="post">
+                                    <div class="">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail-1">Email</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail-1"
+                                                name="email" aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword-1">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword-1"
+                                                name="password">
+                                        </div>
+                                        <div class="form-group row justify-content-end">
+                                            <a href="#" class="">Quên mật khẩu?</a>
+                                        </div>
+                                        <button type="submit" class="chua-thoa-man bo-qua">Đăng nhập</button>
+                                        <button type="button" class="bo-qua" id="cancel-1" onclick="cancelFunc()">Bỏ
+                                            qua</button>
+
+                                        <button type="button" class="btn btn-primary mx-auto mb-3 w-75 d-block">
+                                            Sign up with Facebook
+                                            <i class="fab fa-facebook-square" style="margin-left: 5px;"></i>
+                                        </button>
+
+                                        <div id="my-signin2" class=''></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="signin-form" role="tabpanel"
+                                aria-labelledby="list-profile-list">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail-2">Số điện thoại</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail-2"
+                                            aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword-2">Mã OTP</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword-2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword-3">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword-3">
+                                    </div>
+                                    <button type="submit" class="chua-thoa-man bo-qua">Đăng kí</button>
+                                    <button type="submit" class="bo-qua" id="cancel" onclick="cancelFunc()">Bỏ
+                                        qua</button>
+                                    <p class="text-center" style="font-size: 13px;">Bằng việc đăng kí bạn đã
+                                        đồng ý với các điều khoản bảo mật của chúng tôi</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="" id="flag-language">
+                <div>
+                    <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/default.svg">
+                    <span><i class="fas fa-angle-down"></i></span>
+                </div>
+                <div id="flag" class="fade-view bg-white">
+                    <div id="tieng-Viet" class="">
+                        <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/default.svg" class="">
+                        <small>Vietnamese</small>
+                        <i class="fas fa-check text-warning" id="co-VN"></i>
+                    </div>
+                    <div id="tieng-Anh" class="">
+                        <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/english.svg">
+                        <small>English</small>
+                        <i class="fas fa-check text-warning" style="display: none" id="co-Anh"></i>
+                    </div>
+            </span>
+        </div>
+    </div>
+</div>
