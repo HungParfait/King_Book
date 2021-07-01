@@ -1,78 +1,8 @@
-/*function getPagination(pageNumber) {
+function getPagination(pageNumber) {
     let url = new URLSearchParams(window.location.search);
-    let query = url.get('q')
-    if (query !== null) {
-        axios.get('/search/result/page', {
-            params: {
-                page: pageNumber,
-                limit: 16,
-                q: query
-            }
-        })
-            .then(function (response) {
-                console.log('tren-1')
-                let code;
-                let element = document.getElementById("book-list");
-                element.innerHTML = '';
-                for (let i = 0; i < response.data.names.length; i++) {
-                    code = `<img class="mem-img-new" src= '${response.data.names[i].image}'>` +
-
-                        `<p class="mem-text ten-sach"> ${response.data.names[i].name}</p>` +
-
-                        `<div class="mem-text ten-tac-gia">${response.data.names[i].author}</div>` +
-
-                        `<div class="mem-text hinh-thuc">${response.data.names[i].format}</div>` +
-
-                        `<span class="mem-info">${response.data.names[i].price}</span>`
-
-                    let ele = document.createElement('div');
-                    ele.className = 'row-image-2';
-                    ele.innerHTML = code;
-                    element.appendChild(ele);
-                }
-
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    } else {
-        let params = window.location.pathname.replace('/','')
-        axios( {
-            method: 'get',
-            url: `/list/${params}`, 
-            params: {
-                page: pageNumber,
-                limit: 16,
-            }
-        }
-        )
-            .then(function (response) {
-                console.log('duoi-1')
-                let code;
-                let element = document.getElementById("book-list");
-                element.innerHTML = '';
-                for (let i = 0; i < response.data.names.length; i++) {
-                    code = `<img class="mem-img-new" src= '${response.data.names[i].image}'>` +
-
-                        `<p class="mem-text ten-sach"> ${response.data.names[i].name}</p>` +
-
-                        `<div class="mem-text ten-tac-gia">${response.data.names[i].author}</div>` +
-
-                        `<div class="mem-text hinh-thuc">${response.data.names[i].format}</div>` +
-
-                        `<span class="mem-info">${response.data.names[i].price}</span>`
-
-                    let ele = document.createElement('div');
-                    ele.className = 'row-image-2';
-                    ele.innerHTML = code;
-                    element.appendChild(ele);
-                }
-
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    }
+    let query = url.get('q');
+    window.scrollTo(pageXOffset, 50);
+    window.location.href(`url`);
 }
 
 
@@ -80,41 +10,43 @@ function numberPagination() {
     let url = new URLSearchParams(window.location.search);
     let query = url.get('q')
     if (query !== null) {
-        axios.get('/search/result/page', {
-            params: {
-                q: query,
-                limit: 0
-            }
-        })
+        axios.post('/search/result/page', {
+                params: {
+                    q: query,
+                    limit: 0,
+                    page: 1
+
+                }
+            })
             .then(function (response) {
-                console.log('tren-2')
                 let numberPage;
-                console.log("length", response.data.names.length)
                 numberPage = Math.floor(response.data.names.length / 16) + 1;
-                console.log(numberPage);
-                init({ size: numberPage, step: 3, page: 1 });
+                init({
+                    size: numberPage,
+                    step: 3,
+                    page: 1
+                });
             })
             .catch(function (error) {
                 console.log(error);
             })
     } else {
-        let params = window.location.pathname.replace('/','')
-        console.log(params);
-        axios( {
-            method: 'get',
-            url: `/list/${params}`, 
-            params: {
-                limit: 0,
-            }
-        }
-        )
+        let params = window.location.pathname.replace('/category/', '')
+        axios({
+                method: 'post',
+                url: `/list/${params}`,
+                params: {
+                    limit: 0,
+                }
+            })
             .then(function (response) {
-                console.log('duoi-2')
                 let numberPage;
-                console.log("length", response.data.names.length)
                 numberPage = Math.floor(response.data.names.length / 16) + 1;
-                console.log(numberPage);
-                init({ size: numberPage, step: 3, page: 1 });
+                init({
+                    size: numberPage,
+                    step: 3,
+                    page: 1
+                });
             })
             .catch(function (error) {
                 console.log(error);
@@ -142,7 +74,7 @@ var Pagination = {
     // add pages by number (from [s] to [f])
     Add: function (s, f) {
         for (var i = s; i < f; i++) {
-            Pagination.code += '<a href="#big-nav">' + i + '</a>';
+            Pagination.code += '<a>' + i + '</a>';
         }
     },
 
@@ -213,16 +145,13 @@ var Pagination = {
     Start: function () {
         if (Pagination.size < Pagination.step * 2 + 6) {
             Pagination.Add(1, Pagination.size + 1);
-        }
-        else if (Pagination.page < Pagination.step * 2 + 1) {
+        } else if (Pagination.page < Pagination.step * 2 + 1) {
             Pagination.Add(1, Pagination.step * 2 + 4);
             Pagination.Last();
-        }
-        else if (Pagination.page > Pagination.size - Pagination.step * 2) {
+        } else if (Pagination.page > Pagination.size - Pagination.step * 2) {
             Pagination.First();
             Pagination.Add(Pagination.size - Pagination.step * 2 - 2, Pagination.size + 1);
-        }
-        else {
+        } else {
             Pagination.First();
             Pagination.Add(Pagination.page - Pagination.step, Pagination.page + Pagination.step + 1);
             Pagination.Last();
@@ -267,16 +196,11 @@ var Pagination = {
 
 
 
-/* * * * * * * * * * * * * * * * *
-* Initialization
-* * * * * * * * * * * * * * * * */
-
 var init = function (obj) {
     Pagination.Init(document.getElementById('pagination'), {
         size: obj.size, // pages size
-        page: obj.page,  // selected page
-        step: obj.step   // pages before and after current
+        page: obj.page, // selected page
+        step: obj.step // pages before and after current
     });
 };
 document.addEventListener('DOMContentLoaded', numberPagination)
-
